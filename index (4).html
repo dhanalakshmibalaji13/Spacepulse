@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>SpacePulse + TrackIn – Campus Suite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+<style>
+:root{--bg:#f1f3fb;--card:#fff;--tx:#0f1530;--mu:#465073;--bd:#d5daea;--ac:#4f46e5;--gc:#0a7a43;--gb:#dcf6e6;--yc:#8a6100;--yb:#fff1c2;--rc:#b42318;--rb:#ffd6d2;--vc:#5b21b6;--vb:#ede4ff;--nc:#555;--nb:#e5e7ee;--oc:#a24a00;--ob:#ffe0c2;--kc:#fff;--kb:#3b0d4f}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0e1f;--card:#161a30;--tx:#f4f6ff;--mu:#b6bddd;--bd:#2f3557;--ac:#a5b4fc;--gc:#6ee7a1;--gb:#123d28;--yc:#ffd86b;--yb:#43380f;--rc:#ff9d94;--rb:#521a1a;--vc:#d8c4ff;--vb:#3a2470;--nc:#bbb;--nb:#2a2e45;--oc:#ffb36b;--ob:#4b2c10;--kb:#7c2d9c}}
+:root[data-theme="dark"]{--bg:#0b0e1f;--card:#161a30;--tx:#f4f6ff;--mu:#b6bddd;--bd:#2f3557;--ac:#a5b4fc;--gc:#6ee7a1;--gb:#123d28;--yc:#ffd86b;--yb:#43380f;--rc:#ff9d94;--rb:#521a1a;--vc:#d8c4ff;--vb:#3a2470;--nc:#bbb;--nb:#2a2e45;--oc:#ffb36b;--ob:#4b2c10;--kb:#7c2d9c}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 'Plus Jakarta Sans',system-ui,Segoe UI,Roboto,sans-serif}
+[hidden]{display:none!important}#sp{font-size:16px}#ti{font-size:17px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;height:52px;background:#0f172a;color:#fff;box-shadow:0 2px 12px #0005}
+.nw{max-width:1040px;height:100%;margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{font-weight:800}
+.ntabs{display:flex;gap:4px;background:#ffffff1f;border-radius:12px;padding:3px}.ntabs button{font:inherit;font-weight:800;font-size:14px;border:0;background:none;color:#fff;padding:6px 12px;border-radius:9px;cursor:pointer}.ntabs button.on{background:#fff;color:#1e1b4b}
+.nb{font:inherit;width:38px;height:38px;border-radius:50%;border:1px solid #ffffff55;background:#ffffff1f;color:#fff;cursor:pointer}
+@media(max-width:460px){.brand{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+#sp .hero{color:#fff;padding:24px 16px 76px;background:radial-gradient(circle at 10% 10%,#06b6d488,transparent 40%),radial-gradient(circle at 90% 30%,#a855f788,transparent 42%),linear-gradient(135deg,#0f172a,#312e81)}#sp .w{max-width:1040px;margin:auto}#sp .top,#sp .tr{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}#sp h1{margin:0;font-size:34px;font-weight:800;letter-spacing:-.5px}#sp .tag{margin:2px 0 0;opacity:.92}#sp .live{display:flex;align-items:center;gap:10px;background:#ffffff26;border:1px solid #ffffff55;border-radius:99px;padding:8px 16px;font-weight:800}#sp .ic{font:inherit;border:1px solid #ffffff55;background:#ffffff26;color:#fff;border-radius:50%;width:40px;height:40px;cursor:pointer}#sp .dot{width:12px;height:12px;border-radius:50%;background:#9ca3af}#sp .dot.on{background:#4ade80;animation:pl 1.8s infinite}@keyframes pl{0%{box-shadow:0 0 0 0 #4ade80aa}70%,100%{box-shadow:0 0 0 12px #4ade8000}}#sp .ask{display:flex;gap:8px;margin-top:18px;background:#fff;border-radius:18px;padding:8px;box-shadow:0 10px 30px #0006}#sp .ask input{flex:1;min-width:0;border:0;background:none;font:inherit;font-weight:600;padding:10px 12px;color:#0f1530;outline:none}#sp .ask button{font:inherit;font-weight:800;border:0;border-radius:12px;background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;padding:0 20px;cursor:pointer}#sp .ex{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}#sp .ex button{font:inherit;font-size:14px;font-weight:700;border:1px solid #ffffff77;background:#ffffff1f;color:#fff;border-radius:99px;padding:6px 12px;cursor:pointer}#sp .und{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;font-size:14px;min-height:28px}#sp .pill{background:#ffffff2e;border:1px solid #ffffff66;border-radius:99px;padding:3px 11px;font-weight:700}#sp main{max-width:1040px;margin:-44px auto 0;padding:0 16px 30px}#sp .box{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 2px 12px #0000000f}#sp .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:14px}#sp .stats .box{margin:0;display:flex;gap:12px;align-items:center}#sp .ring{--p:0;width:58px;height:58px;border-radius:50%;flex:none;display:grid;place-items:center;background:conic-gradient(var(--gc) calc(var(--p)*1%),var(--bd) 0)}#sp .ring b{width:44px;height:44px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:14px}#sp .k{font-size:12px;font-weight:800;letter-spacing:.5px;color:var(--mu);text-transform:uppercase}#sp .v{font-size:20px;font-weight:800}#sp h2{margin:0 0 10px;font-size:20px}#sp h3{margin:14px 0 8px;font-size:16px}#sp .note{font-size:14px;color:var(--mu)}#sp .ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:end}#sp .ctl label{font-size:12px;font-weight:800;letter-spacing:.5px;color:var(--mu);display:block;margin-bottom:2px}#sp input,#sp select{font:inherit;font-weight:700;background:var(--bg);color:var(--tx);border:2px solid var(--bd);border-radius:12px;padding:8px 10px}#sp input[type=range]{padding:0;border:0;accent-color:var(--ac);width:100%}#sp .bt{font:inherit;font-weight:700;font-size:14px;padding:9px 14px;border-radius:99px;border:2px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;white-space:nowrap}#sp .bt.on{border-color:var(--ac);background:var(--ac);color:#fff}#sp .tabs{display:flex;gap:6px;overflow-x:auto;margin:12px 0}#sp .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}#sp .rm{position:relative;border:2px solid var(--c,var(--bd));background:var(--b,var(--card));border-radius:16px;padding:12px;transition:transform .15s}#sp .rm:hover{transform:translateY(-2px)}#sp .rm.dim{opacity:.4}#sp .rm.big{padding:16px}#sp .rm .rh{display:flex;justify-content:space-between;gap:8px;align-items:center}#sp .rm b{font-size:18px}#sp .st{font-size:13px;font-weight:800;color:var(--c);text-align:right}#sp .g{--c:var(--gc);--b:var(--gb)}#sp .y{--c:var(--yc);--b:var(--yb)}#sp .r{--c:var(--rc);--b:var(--rb)}#sp .v2{--c:var(--vc);--b:var(--vb)}#sp .n{--c:var(--nc);--b:var(--nb)}#sp .tg{font-size:14px;color:var(--mu);font-weight:600;margin:3px 0}#sp .ln{font-size:15px;font-weight:600}#sp .pin{border:0;background:none;cursor:pointer;font-size:18px;padding:0 4px;line-height:1}#sp .ok{display:inline-block;font-size:12px;font-weight:800;border-radius:99px;padding:2px 8px;margin:4px 4px 0 0;background:var(--bg)}#sp .ok.a{color:var(--gc)}#sp .ok.z{color:var(--rc)}#sp .sc{font-size:13px;font-weight:800;color:var(--vc)}#sp .rt{border:2px dashed var(--vc);border-radius:16px;padding:12px;margin-bottom:10px;background:var(--vb)}#sp .rt div{padding:3px 0;font-weight:600}#sp .bn{border-radius:14px;padding:12px 14px;margin-bottom:12px;font-weight:700;background:var(--yb);color:var(--yc);border:2px solid var(--yc)}#sp .fh{display:flex;justify-content:space-between;margin:16px 0 8px;font-weight:800}#sp .tlw{overflow-x:auto}#sp .tli{min-width:640px}#sp .tr2{display:grid;grid-template-columns:74px 1fr;gap:8px;align-items:center;margin:5px 0}#sp .rn{font-weight:800;font-size:14px;line-height:1.1}#sp .rn small{display:block;color:var(--mu);font-weight:600;font-size:11px}#sp .tks{position:relative;height:16px}#sp .tks span{position:absolute;transform:translateX(-50%);font-size:11px;font-weight:700;color:var(--mu)}#sp .bar{position:relative;height:28px;background:var(--gb);border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid var(--bd)}#sp .blk{position:absolute;top:0;bottom:0;background:var(--rc);opacity:.75;border-left:1px solid var(--card)}#sp .win{position:absolute;top:0;bottom:0;background:var(--vc);opacity:.28;border:2px solid var(--vc);border-radius:6px}#sp .nowl{position:absolute;top:0;bottom:0;width:3px;background:var(--ac);box-shadow:0 0 0 1px var(--card)}#sp .lg{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--mu);font-weight:600;margin-top:8px}#sp .lg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}@media(max-width:560px){#sp h1{font-size:27px}#sp .ask button{padding:0 12px}}@media(prefers-reduced-motion:reduce){#sp *{animation:none!important;transition:none!important}}#ti .hero{color:#fff;padding:24px 16px 70px;background:radial-gradient(circle at 12% 15%,#c026d377,transparent 38%),radial-gradient(circle at 88% 25%,#06b6d477,transparent 40%),linear-gradient(135deg,#1e1b4b,#134e4a)}#ti .w{max-width:1040px;margin:auto}#ti .top{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}#ti h1{margin:0;font-size:34px;font-weight:800;letter-spacing:-.5px}#ti .tag{margin:2px 0 0;font-size:16px}#ti label.l{display:block;font-size:12px;font-weight:800;letter-spacing:.8px;opacity:.9;margin-bottom:3px}#ti select,#ti input{font:inherit;font-weight:700;background:var(--card);color:var(--tx);border:2px solid var(--bd);border-radius:12px;padding:9px 12px}#ti .hero select{min-width:180px;border-color:#fff}#ti .seg{display:inline-flex;background:#ffffff26;border-radius:12px;padding:3px}#ti .seg button{font:inherit;font-weight:800;border:0;background:none;color:#fff;padding:8px 14px;border-radius:9px;cursor:pointer}#ti .seg button.on{background:#fff;color:#1e1b4b}#ti .mid{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:20px}#ti .ring{position:relative;width:150px;height:150px;flex:none}#ti .ring svg{width:100%;height:100%}#ti .rb,#ti .rf{fill:none;stroke-width:12}#ti .rb{stroke:#ffffff35}#ti .rf{stroke:#fff;stroke-linecap:round;stroke-dasharray:0 315;transform:rotate(-90deg);transform-origin:60px 60px;transition:stroke-dasharray .7s}#ti .rt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}#ti .rt b{font-size:30px;line-height:1}#ti .rt small{font-size:13px;font-weight:700;margin-top:4px}#ti .sum{flex:1;min-width:250px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}#ti .sum div{background:#ffffff24;border:1px solid #ffffff55;border-radius:16px;padding:12px 14px;backdrop-filter:blur(6px)}#ti .sum small{display:block;font-size:12px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}#ti .sum b{font-size:21px;line-height:1.25;display:block}#ti main{max-width:1040px;margin:-42px auto 0;padding:0 16px 30px}#ti .tabs{display:flex;gap:6px;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:6px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;box-shadow:0 6px 18px #0003}#ti .tabs button{flex:1;font:inherit;font-weight:800;font-size:15px;padding:12px 6px;border:0;border-radius:11px;background:none;color:var(--mu);cursor:pointer}#ti .tabs button.on{background:var(--ac);color:#fff}#ti .pane{display:none;margin-top:16px}#ti .pane.on{display:block}#ti .bar2{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}#ti .bt{font:inherit;font-weight:700;font-size:14px;padding:9px 14px;border-radius:99px;border:2px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer}#ti .bt.on{border-color:var(--ac);background:var(--ac);color:#fff}#ti .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}#ti .sc,#ti .box{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:15px;box-shadow:0 2px 10px #0000000d}#ti .sc{border-top:7px solid var(--c,var(--bd));transition:transform .15s}#ti .sc:hover{transform:translateY(-3px)}#ti .hd{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}#ti .ic{font-size:22px;background:var(--b);width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:none}#ti .nm{font-weight:800;font-size:17px;line-height:1.3;flex:1;margin:0 8px}#ti .badge{font-size:13px;font-weight:800;padding:3px 10px;border-radius:99px;background:var(--b);color:var(--f);white-space:nowrap}#ti .g{--c:var(--gc);--b:var(--gb);--f:var(--gc)}#ti .y{--c:var(--yc);--b:var(--yb);--f:var(--yc)}#ti .o{--c:var(--oc);--b:var(--ob);--f:var(--oc)}#ti .r{--c:var(--rc);--b:var(--rb);--f:var(--rc)}#ti .k{--c:var(--kb);--b:var(--kb);--f:var(--kc)}#ti .nums{display:flex;gap:18px;align-items:flex-end;margin:10px 0}#ti .pct{font-size:42px;font-weight:800;line-height:1;color:var(--c)}#ti .pct small{font-size:20px}#ti .nums span{font-size:14px;color:var(--mu);font-weight:600}#ti .nums span b{display:block;font-size:22px;color:var(--tx)}#ti .bar{position:relative;height:16px;border-radius:9px;background:var(--bd);margin:14px 0 28px}#ti .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:9px;transition:width .5s}#ti .bar .mx{background:var(--c);opacity:.3}#ti .bar .nw{background:var(--c)}#ti .bar u{position:absolute;top:-5px;bottom:-5px;width:3px;background:var(--tx)}#ti .bar u em{position:absolute;top:22px;left:-12px;font:800 12px 'Plus Jakarta Sans',sans-serif;font-style:normal;color:var(--mu)}#ti .f{font-size:15px;color:var(--mu);margin:3px 0}#ti .f b{color:var(--tx)}#ti .wi{margin-top:10px;background:var(--bg);border-radius:12px;padding:8px 10px;font-size:14px;font-weight:600}#ti .wi input{width:100%;padding:0;border:0;accent-color:var(--ac);background:none}#ti .inp{display:flex;gap:10px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--bd)}#ti .inp label{flex:1;font-size:13px;font-weight:800;color:var(--mu)}#ti .st{display:flex;margin-top:3px}#ti .st button{width:40px;font:800 20px 'Plus Jakarta Sans',sans-serif;border:2px solid var(--bd);background:var(--bg);color:var(--tx);cursor:pointer}#ti .st button:first-child{border-radius:10px 0 0 10px}#ti .st button:last-child{border-radius:0 10px 10px 0}#ti .st input{width:100%;min-width:0;border-radius:0;border-left:0;border-right:0;text-align:center;padding:6px 2px}#ti .ban{border-radius:14px;padding:12px 14px;margin-bottom:12px;background:var(--b);color:var(--f);font-weight:700;border:2px solid var(--c)}#ti .k.ban{color:#fff}#ti .strip{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px}#ti .chip{flex:0 0 96px;border:3px solid transparent;border-radius:14px;background:var(--b);color:var(--f);padding:8px;cursor:pointer;text-align:center;font:inherit}#ti .chip b{display:block;font-size:15px;color:var(--tx)}#ti .chip span{font-size:13px;font-weight:800}#ti .chip.sel{border-color:var(--tx)}#ti .row{display:flex;gap:12px;align-items:center;padding:11px 4px;border-bottom:1px solid var(--bd)}#ti .row:last-child{border:0}#ti .row .t{width:72px;font-weight:800;color:var(--mu);font-size:15px}#ti .row .n{flex:1;font-weight:700}#ti .row .n small{display:block;color:var(--mu);font-size:14px;font-weight:500}#ti .ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-bottom:12px}#ti .ctl label{font-size:13px;font-weight:800;color:var(--mu);display:block}#ti details{margin-top:14px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 14px}#ti summary{font-weight:800;cursor:pointer}#ti .note{font-size:14px;color:var(--mu)}#ti h2{margin:0 0 10px;font-size:21px}@media(max-width:560px){#ti h1{font-size:27px}#ti .tabs button{font-size:13px}}#ti .tabs{top:calc(env(safe-area-inset-top,0px) + 58px)}
+</style></head><body>
+<nav class="nav"><div class="nw"><b class="brand">🎓 Campus Suite</b><div class="ntabs" id="nav"><button data-a="sp" class="on">📡 SpacePulse</button><button data-a="ti">🧭 TrackIn</button></div><button class="nb" id="th" aria-label="Switch light or dark theme">🌓</button></div></nav>
+<div id="sp">
+<div class="hero"><div class="w"><div class="top"><div><h1>📡 SpacePulse</h1><p class="tag">Timetables show where classes are. <b>SpacePulse reveals where possibilities are.</b></p></div>
+<div class="tr"><div class="live"><span class="dot" id="dot"></span><span id="tl">–</span></div></div></div>
+<div class="ask"><input id="q" placeholder="e.g. AC room on the ground floor for my team for the next 2 hours" aria-label="Ask for a space"><button id="go">Find space ✨</button></div>
+<div class="ex"><button data-q="I need an AC room on the ground floor for me and my team for the next 2 hours">❄️ AC · ground floor · 2 h</button><button data-q="We are 5 people, need a quiet room on the second floor for 90 minutes">👥 5 people · quiet</button><button data-q="Any room after lunch for an hour">🍽️ After lunch</button><button data-q="AC room for 3 people tomorrow at 10 am for 1 hour">📅 Tomorrow 10 AM</button></div>
+<div class="und" id="und"></div></div></div>
+<main>
+<div class="stats" id="stats"></div>
+<div class="box"><h2>🎯 Your best spaces</h2><div id="res"></div></div>
+<div class="box"><h2>🗓️ Day timeline</h2><p class="note">Tap any bar to jump to that time. The purple band is your requested session.</p><div class="tlw"><div class="tli" id="tlv"></div></div>
+<div class="lg"><span><i style="background:var(--gb);border:1px solid var(--bd)"></i>Free</span><span><i style="background:var(--rc)"></i>Class</span><span><i style="background:var(--vc)"></i>Your session</span><span><i style="background:var(--ac)"></i>Selected time</span></div></div>
+<div class="box"><h2>🎛️ Time &amp; filters</h2><div class="ctl">
+<div><label for="dv">DATE</label><input type="date" id="dv"></div>
+<div style="flex:1;min-width:200px"><label for="tm">TIME: <span id="tv"></span></label><input type="range" id="tm" min="540" max="1005" step="5"></div>
+<button class="bt" id="nw">📍 Now (live)</button><button class="bt" id="dm">🎬 Demo: Mon 2:10 PM</button></div>
+<div class="ctl" style="margin-top:12px"><div><label for="du">NEED (MIN)</label><input type="number" id="du" min="15" max="480" step="15" style="width:90px"></div>
+<div><label for="sp-cp">MIN SEATS</label><input type="number" id="sp-cp" min="0" max="200" style="width:90px"></div><button class="bt" id="ac">❄️ AC only</button><button class="bt" id="qt">🤫 Quiet (long window)</button><button class="bt" id="rs">↺ Reset</button></div>
+<div class="tabs" id="sp-tabs"></div><div id="grid"></div></div>
+<p class="note" id="ft"></p>
+</main>
+</div>
+<div id="ti" hidden>
+<div class="hero"><div class="w"><div class="top"><div><h1>🧭 TrackIn</h1><p class="tag">Don't just track attendance. <b>Plan every absence.</b></p></div>
+<div style="display:flex;flex-wrap:wrap;gap:14px;align-items:end"><div><label class="l">YOUR CLASS</label><select id="sec"></select></div>
+<div><label class="l">MY TARGET</label><div class="seg" id="tg"><button data-g="75" class="on">75%</button><button data-g="80">80%</button><button data-g="90">90%</button></div></div></div></div>
+<div class="mid"><div class="ring"><svg viewBox="0 0 120 120"><circle class="rb" cx="60" cy="60" r="50"/><circle class="rf" id="rg" cx="60" cy="60" r="50"/></svg><div class="rt"><b id="s1">–</b><small id="s0">overall</small></div></div>
+<div class="sum"><div><small>Next class day</small><b id="s2">–</b></div><div><small>Bottleneck subject</small><b id="s3">–</b></div></div></div></div></div>
+<main>
+<div class="tabs" id="ti-tabs"><button data-t="a" class="on">📚 Subjects</button><button data-t="b">📅 Daily Plan</button><button data-t="c">🛡️ LeaveSafe</button></div>
+<section class="pane on" id="pa"><div class="bar2"><button class="bt" id="srt" onclick="SR=!SR;this.classList.toggle('on',SR);calc()">↕ Riskiest first</button><button class="bt" onclick="fill(1)">🎲 Sample numbers</button><button class="bt" onclick="fill(0)">🧹 Clear all</button></div><div id="alerts"></div><div class="grid" id="cards"></div>
+<details><summary>⚙️ Dates &amp; holidays (optional)</summary><div class="ctl" style="margin-top:10px">
+<div><label>Count classes from</label><input type="date" id="from"></div><div><label>Semester ends</label><input type="date" id="end" value="2026-11-29"></div>
+<div><label>Projection date</label><input type="date" id="plan" value="2026-11-01"></div>
+<div style="flex:1;min-width:200px"><label>Holidays (YYYY-MM-DD, commas)</label><input id="hol" style="width:100%" placeholder="2026-11-08, 2026-11-09"></div></div>
+<p class="note">Each timetable period counts as one session. Your numbers are saved on this device.</p></details></section>
+<section class="pane" id="pb"><div class="box"><h2>Your next 14 class days</h2><div class="strip" id="strip"></div><div id="det"></div><button class="bt" style="margin-top:10px" id="ti-cp" onclick="cpy()">📋 Copy this plan (for WhatsApp)</button></div></section>
+<section class="pane" id="pc"><div class="box"><h2>Can I take this leave?</h2><div class="ctl"><div><label>Leave from</label><input type="date" id="lf" value="2026-10-20"></div><div><label>Leave to</label><input type="date" id="lt" value="2026-10-24"></div></div><div id="lv"></div></div></section>
+<p class="note" style="margin-top:16px">Projections use your class timetable and the numbers you enter. They are planning aids, not official records – detention decisions rest with the college.</p>
+</main>
+</div>
+<script>
+const PF="Professional Ethics",UH="Universal Human Values-II",VR="Verbal Reasoning",SE="Social Engineering";
+const B2={A:"Transforms & Boundary Value Problems",B:"Biomedical Signals & Systems",C:"Electric & Electronic Circuits",D:"Digital Logic for Medical Systems",E:"Medical Physics",F:PF,G:UH,H:VR,I:SE,L:"DLMS / EEC Lab"};
+const DS2={A:B2.A,B:"Solid State Devices",C:"Computer Org & Architecture",D:"Digital Logic Design",E:"EM Theory & Interference",F:PF,G:UH,H:VR,I:SE,L:"Devices & Digital IC Lab"};
+const B3={A:"Probability & Statistics",B:"Microcontrollers & Medical Apps",C:"Biomedical Signal Processing",D:"Biometrics",E:"Modern Wireless Comm",F:"Principles of Medical Imaging",G:"Analytical & Logical Thinking",H:"Indian Art Form",I:"Community Connect",L:"MPMC Lab",M:"Bio DSP Lab"};
+const E3={A:"Discrete Mathematics",B:"Microprocessor & Interfacing",C:"VLSI Design & Technology",F:"Community Connect",G:"Analytical & Logical Thinking",H:"Indian Art Form",L:"VLSI / Microprocessor Lab"};
+const E4={A:"Behavioural Psychology",B:"Wireless Comm & Antenna",C:"Computer Comm & Network Security",D:"Semiconductor Memory Design",E:"Scripting for EDA",F:"Machine Learning for All",L:"CCNS Lab"};
+const SEC={
+"II BME":{s:B2,t:["E C I I - L L - -","C E B A - H H - -","B D A - - H G - -","A E B D - - - L L","F A C D - - - G G"]},
+"II ECE-DS A":{s:DS2,t:["E A I I - G G L L","C A E D - G - H H","A B C D - - H - -","B C A F - L L - -","D B E C - - - - -"]},
+"III BME":{s:B3,t:["G G L L - E B F H","M M G - - C D A B","- - - - - C A F D","- - I - - A C E B","I I - - - F A D E"]},
+"III ECE-A":{s:{...E3,D:"System & Network on Chip",E:"Machine Learning for All"},t:["E B B A - G G - -","H D B B - - G - -","C A D F - - - L L","A E C F - - - - -","D A E C - L L - -"]},
+"III ECE-B":{s:{...E3,D:"System & Network on Chip",E:"Machine Learning for All"},t:["L L - - - E B A D","G G - - - F B D C","G - - - - B B A H","L L - - - A C E F","- - - - - C A E D"]},
+"III ECE-DS":{s:{...E3,D:"Machine Learning for All",E:"Database Design & Management"},t:["E B C A - - - - -","C B D F - L L - -","H B A C - - - G G","A D E F - - - - -","D A E B - G - L L"]},
+"IV ECE-A":{s:E4,t:["C - A D - - - - -","C D B F - - - - -","B L E F - - - - -","F A E B - - - - -","C A D E - - - - -"]},
+"IV ECE-B":{s:E4,t:["C A E F - - - - -","C E F B - - - - -","C D A B - - - - -","D B L A - - - - -","E D F - - - - - -"]}};
+const VM={"II BME":{v:"602",m:{H:"TB-106",L:["107","309"]}},"II ECE-DS A":{v:"416",m:{G:"602",H:"TB-106",L:["309","107"]}},"III BME":{v:"211",m:{G:"625",I:"108",L:"107",M:"108"}},"III ECE-A":{v:"518",m:{G:"625",L:["108","309"]}},"III ECE-B":{v:"518",m:{G:"625",L:["108","309"]}},"III ECE-DS":{v:"519",m:{G:"625",L:["108","107"]}},"IV ECE-A":{v:"225",m:{L:"108"}},"IV ECE-B":{v:"227",m:{L:"108"}}};
+for(const k in VM)Object.assign(SEC[k],VM[k]);
+/* ROOMS: AC / seats / type are SAMPLE metadata (not in the timetables) - edit freely */
+const R={"108":{ty:"Lab",cap:40,ac:1},"107":{ty:"Lab",cap:40,ac:1},"309":{ty:"Lab",cap:45,ac:1},"625":{ty:"CDC Hall",cap:90,ac:1},"602":{ty:"Classroom",cap:70,ac:1},"TB-106":{ty:"CDC Hall",cap:60,ac:0},"518":{ty:"Classroom",cap:65,ac:1},"519":{ty:"Classroom",cap:65,ac:0},"227":{ty:"Classroom",cap:60,ac:0},"225":{ty:"Classroom",cap:60,ac:1},"416":{ty:"Classroom",cap:60,ac:0},"211":{ty:"Classroom",cap:70,ac:1}};
+for(const id in R){R[id].fl=id=="TB-106"?0:+id[0]-1;R[id].n=id=="TB-106"?"TB-106":"IST "+id}
+function roomOf(sec,k){const c=SEC[sec],r=[].concat(c.m&&c.m[k]||c.v);return r.map(x=>R[x]?R[x].n:x).join(" + ")}
+</script>
+<script>
+(function(){
+const OPEN=540,CLOSE=1010,P=[[540,590],[590,640],[650,700],[700,750],[750,800],[800,850],[850,900],[910,960],[960,1010]];
+const FL=["Ground","First","Second","Third","Fourth","Fifth"],DN=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+const $=i=>document.getElementById(i),pad=n=>String(n).padStart(2,"0"),IDS=Object.keys(R).sort((a,b)=>R[a].fl-R[b].fl||a.localeCompare(b));
+function fm(m){const h=Math.floor(m/60);return(h%12||12)+":"+pad(m%60)+" "+(h<12?"AM":"PM")}
+const iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const BY={};for(const id in R)BY[id]=[[],[],[],[],[]];
+for(const sn in SEC){const c=SEC[sn];c.t.forEach((row,d)=>row.split(" ").forEach((k,p)=>{if(k=="-")return;[].concat(c.m[k]||c.v).forEach(r=>BY[r][d].push({s:P[p][0],e:P[p][1],sec:sn,k}))}))}
+let conf=0,cex="";for(const id in BY)BY[id].forEach((L,d)=>{L.sort((a,b)=>a.s-b.s);for(let i=0;i<L.length;i++)for(let j=i+1;j<L.length;j++)if(L[j].s<L[i].e&&L[j].sec!=L[i].sec){conf++;cex=cex||`${R[id].n} ${DN[d]} ${fm(L[j].s)}`}});
+let F={floor:null,dur:60,ac:0,cap:0,quiet:0},TM=850,DI=0,live=1,raf=0,FAV=new Set();
+try{FAV=new Set(JSON.parse(localStorage.getItem("sp-fav")||"[]"))}catch(e){}
+const saveFav=()=>{try{localStorage.setItem("sp-fav",JSON.stringify([...FAV]))}catch(e){}};
+const dayIdx=()=>{const v=$("dv").value||iso(new Date());return(new Date(v+"T00:00").getDay()+6)%7};
+const sched=()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;run()})};
+function win(id,d,t){const L=d>4?[]:BY[id][d];let cur=null,nx=CLOSE;for(const x of L){if(x.s<=t&&t<x.e)cur=x;else if(x.s>t&&x.s<nx)nx=x.s}
+ if(cur){let e=cur.e;for(const x of L)if(x.s<=e&&x.e>e)e=x.e;return{free:0,cur,end:e}}return{free:1,until:nx}}
+const NW={a:1,an:1,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10},nv=x=>NW[x]||+x,NU="\\d+|two|three|four|five|six|seven|eight|nine|ten";
+const FW={ground:0,first:1,"1st":1,second:2,"2nd":2,third:3,"3rd":3,fourth:4,"4th":4,fifth:5,"5th":5};
+function parse(q){q=q.toLowerCase();const o={};let m;
+ if(/half an? hour/.test(q))o.dur=30;else if(m=q.match(/\b(\d+(?:\.\d+)?|an?|one|two|three|four|five|six)\s*(hours?|hrs?|hr|h|minutes?|mins?|min)\b/))o.dur=Math.round(nv(m[1])*(/^h/.test(m[2])?60:1));else if(/couple of hours/.test(q))o.dur=120;
+ if(m=q.match(new RegExp("\\bme and (?:my )?("+NU+") (?:friends|teammates|others|mates)")))o.cap=nv(m[1])+1;
+ else if(m=q.match(new RegExp("\\b(?:team|group) of ("+NU+")\\b|\\b("+NU+")[\\s-]*(?:people|persons|members?|students|friends|pax|of us)\\b")))o.cap=nv(m[1]||m[2]);
+ if(m=q.match(/\b(ground|first|second|third|fourth|fifth|1st|2nd|3rd|4th|5th)[\s-]*floor/))o.floor=FW[m[1]];else if(m=q.match(/\bfloor\s*(\d)\b/))o.floor=Math.min(5,+m[1]);
+ if(/\b(a\.?c|air[\s-]?condition\w*|cool)\b/.test(q)&&!/non[\s-]?a\.?c/.test(q))o.ac=1;
+ if(/quiet|silent|peace/.test(q))o.quiet=1;
+ if(/tomorrow/.test(q))o.tom=1;
+ if(/after lunch/.test(q))o.start=800;else if(m=q.match(/\b(?:at|from|after|by)\s+(\d{1,2})(?::(\d{2}))?\s*(am|pm)?(?!\s*(?:hours?|hrs?|minutes?|mins?|people|persons|members))\b/)){let h=+m[1];if(m[3]=="pm"&&h<12)h+=12;else if(m[3]=="am"&&h==12)h=0;else if(!m[3]&&h<9)h+=12;if(h<24)o.start=h*60+(+m[2]||0)}
+ return o}
+function ask(q){const o=parse(q),u=[];F={floor:null,dur:60,ac:0,cap:0,quiet:0};
+ if(o.floor!=null){F.floor=o.floor;u.push("🏢 "+FL[o.floor]+" floor")}if(o.ac){F.ac=1;u.push("❄️ AC")}if(o.cap){F.cap=o.cap;u.push("👥 "+o.cap+" people")}
+ if(o.quiet){F.quiet=1;u.push("🤫 quiet")}
+ if(o.dur){F.dur=o.dur;u.push("⏱️ "+o.dur+" min")}else u.push("⏱️ 60 min (assumed)");
+ if(o.tom){const d=new Date();d.setDate(d.getDate()+1);$("dv").value=iso(d);u.push("📅 tomorrow");live=0}
+ if(o.start!=null){TM=Math.max(OPEN,Math.min(1005,o.start));u.push("🕒 from "+fm(TM));live=0}
+ $("und").innerHTML=q.trim()?'<span class="pill">Understood:</span>'+u.map(x=>`<span class="pill">${x}</span>`).join(""):"";sched()}
+function score(x,D){return Math.round(40*Math.min(1,x.fr/D)+(x.ok.fl?20:0)+(x.ok.ac?20:0)+(x.ok.cap?10:0)+10*Math.min(1,Math.max(0,x.fr-D)/(F.quiet?120:60)))}
+const nm=x=>`${x.r.n} · ${FL[x.r.fl]} floor`,tags=x=>`${x.r.ty} · ${x.r.cap} seats${x.r.ac?" · ❄️ AC":" · no AC"}`;
+function room(x,cl,big,D){const w=x.w,f=x.fr,pin=FAV.has(x.id);
+ const st=w.free?`Free until ${fm(w.until)}<br>${f} min`:`Busy until ${fm(w.end)}<br>free in ${w.end-TM} min`;
+ let ln="";if(!w.free){const nx=win(x.id,DI,w.end);ln=`${w.cur.sec} · ${SEC[w.cur.sec].s[w.cur.k]}<br>Free at ${fm(w.end)}${nx.free?" for "+(nx.until-w.end)+" min":""}`}
+ else ln=f>=D?"✔ Long enough for your session":`⚠ Only ${f} min – shorter than ${D} min`;
+ const ok=`<div>${[["fl","Floor"],["ac","AC"],["cap","Seats"],["dur","Duration"]].map(([k,l])=>`<span class="ok ${x.ok[k]?"a":"z"}">${x.ok[k]?"✔":"✖"} ${l}</span>`).join("")}<span class="sc"> SpaceFit ${x.sc}/100</span></div>`;
+ return`<div class="rm ${cl} ${big?"big":""}"><div class="rh"><b>${x.r.n} <button class="pin" data-pin="${x.id}" aria-label="Pin room" title="Pin room">${pin?"⭐":"☆"}</button></b><span class="st">${st}</span></div><div class="tg">${FL[x.r.fl]} floor · ${tags(x)}</div><div class="ln">${ln}</div>${ok}</div>`}
+function routes(A,t,D){const good=A.filter(x=>x.w.free&&x.ok.ac&&x.ok.cap),out=[];
+ for(const a of good){const aEnd=a.w.until-5;if(aEnd-t<20)continue;for(const b of good){if(b.id==a.id)continue;const wb=win(b.id,DI,aEnd);if(!wb.free)continue;const need=D-(aEnd-t);if(need<=0||wb.until-aEnd<need)continue;
+  out.push({a,b,aEnd,end:aEnd+need,sc:(a.ok.fl?15:0)+(b.ok.fl?15:0)+(a.r.fl==b.r.fl?10:0)+Math.min(20,(a.w.until-t)/6)+Math.min(10,(wb.until-aEnd-need)/6)})}}
+ return out.sort((x,y)=>y.sc-x.sc).slice(0,3)}
+function nextMatch(D,t){for(let tt=t+5;tt+D<=CLOSE;tt+=5)for(const id of IDS){const r=R[id],w=win(id,DI,tt);
+ if(w.free&&w.until-tt>=D&&(F.floor==null||r.fl==F.floor)&&(!F.ac||r.ac)&&r.cap>=F.cap)return{r,tt}}return null}
+function tline(A,t,D,outH){const pos=m=>(Math.max(OPEN,Math.min(CLOSE,m))-OPEN)/(CLOSE-OPEN)*100;let tk="";
+ for(let h=9;h<=16;h++)tk+=`<span style="left:${pos(h*60)}%">${h%12||12}${h<12?"a":"p"}</span>`;
+ return`<div class="tr2"><div></div><div class="tks">${tk}</div></div>`+A.map(x=>{const L=DI>4?[]:BY[x.id][DI];
+  return`<div class="tr2"><div class="rn">${x.r.n.replace("IST ","")}<small>${FL[x.r.fl]}</small></div><div class="bar" role="button" aria-label="${x.r.n} timeline">`+
+  L.map(b=>`<i class="blk" style="left:${pos(b.s)}%;width:${pos(b.e)-pos(b.s)}%" title="${b.sec} · ${SEC[b.sec].s[b.k]} (${fm(b.s)}–${fm(b.e)})"></i>`).join("")+
+  (outH?"":`<i class="win" style="left:${pos(t)}%;width:${pos(t+D)-pos(t)}%"></i><i class="nowl" style="left:${pos(t)}%"></i>`)+`</div></div>`}).join("")}
+function run(){const d=DI=dayIdx(),t=TM,outH=t<OPEN||t>=CLOSE,D=Math.max(15,Math.min(F.dur,CLOSE-t));
+ $("tl").textContent=`${DN[d]} · ${fm(t)}`;$("tv").textContent=fm(t);$("tm").value=Math.max(OPEN,Math.min(1005,t));$("dot").className="dot"+(live?" on":"");
+ if(document.activeElement!==$("du"))$("du").value=F.dur;if(document.activeElement!==$("sp-cp"))$("sp-cp").value=F.cap||"";
+ $("ac").classList.toggle("on",!!F.ac);$("qt").classList.toggle("on",!!F.quiet);
+ const A=IDS.map(id=>{const w=win(id,d,t),r=R[id],fr=w.free?w.until-t:0,ok={dur:fr>=D,fl:F.floor==null||r.fl==F.floor,ac:!F.ac||!!r.ac,cap:r.cap>=F.cap};const x={id,r,w,fr,ok};x.sc=score(x,D);x.perfect=w.free&&ok.dur&&ok.fl&&ok.ac&&ok.cap;return x});
+ const nf=A.filter(x=>x.w.free).length,pct=Math.round(nf/A.length*100),cl=x=>outH?"n":!x.w.free?"r":x.fr>=D?"g":"y";
+ let lg=A[0],nc=null;for(const x of A){if(x.fr>lg.fr)lg=x;if(d<5)for(const b of BY[x.id][d])for(const m of[b.s,b.e])if(m>t&&(nc==null||m<nc))nc=m}
+ $("stats").innerHTML=`<div class="box"><div class="ring" style="--p:${outH?0:pct}"><b>${outH?"–":nf+"/"+A.length}</b></div><div><div class="k">Rooms free</div><div class="v">${outH?"Closed":pct+"%"}</div></div></div>`+
+ `<div class="box"><div style="font-size:32px">🏆</div><div><div class="k">Longest free window</div><div class="v">${outH||!lg.fr?"–":lg.r.n+" · "+lg.fr+" min"}</div></div></div>`+
+ `<div class="box"><div style="font-size:32px">⏳</div><div><div class="k">Next class change</div><div class="v">${outH||nc==null?"–":fm(nc)}</div></div></div>`;
+ let h="";const pins=A.filter(x=>FAV.has(x.id));
+ if(pins.length)h+=`<h3>⭐ Pinned rooms</h3><div class="grid">${pins.map(x=>room(x,cl(x),0,D)).join("")}</div>`;
+ if(outH)h+=`<div class="bn">Outside class hours (9:00 AM – 4:50 PM). Use the time slider or the Demo button.</div>`;
+ else{if(d>4)h+=`<div class="bn">Weekend – no classes are scheduled, so every room is free.</div>`;
+  if(D<F.dur)h+=`<div class="bn">Campus closes at 4:50 PM, so your request is shortened to ${D} min.</div>`;
+  const best=A.filter(x=>x.perfect).sort((a,b)=>b.sc-a.sc),oth=A.filter(x=>x.w.free&&!x.perfect&&x.fr>=10).sort((a,b)=>b.sc-a.sc);
+  if(best.length){h+=`<h3>⭐ Best match</h3><div class="grid">${room(best[0],"v2",1,D)}</div>`;if(best.length>1)h+=`<h3>Also fully matching (${best.length-1})</h3><div class="grid">${best.slice(1,7).map(x=>room(x,"g",0,D)).join("")}</div>`}
+  else{h+=`<div class="bn">No single room matches everything for ${D} min.</div>`;const nm2=nextMatch(D,t);if(nm2)h+=`<div class="bn" style="background:var(--vb);color:var(--vc);border-color:var(--vc)">⏭️ Next full match: <b>${nm2.r.n}</b> from ${fm(nm2.tt)}</div>`;
+   const rt=routes(A,t,D);
+   if(rt.length)h+=`<h3>🧭 Uninterrupted Work Route</h3>`+rt.map(r=>`<div class="rt"><div>🕒 ${fm(t)}–${fm(r.aEnd)} → <b>${nm(r.a)}</b> (${tags(r.a)})</div><div>🕒 ${fm(r.aEnd)}–${fm(r.end)} → <b>${nm(r.b)}</b> (${tags(r.b)})</div><div class="note">Move at ${fm(r.aEnd)} – 5 min before the next class in ${r.a.r.n}. Total ${D} min uninterrupted.</div></div>`).join("");
+   if(oth.length)h+=`<h3>Closest alternatives</h3><div class="grid">${oth.slice(0,6).map(x=>room(x,"y",0,D)).join("")}</div>`;
+   if(!rt.length&&!oth.length)h+=`<p class="note">Try a shorter duration, another floor, or a later time.</p>`}}
+ $("res").innerHTML=h;$("tlv").innerHTML=tline(A,t,D,outH);
+ const fls=[...new Set(A.map(x=>x.r.fl))].sort();
+ $("sp-tabs").innerHTML=`<button class="bt ${F.floor==null?"on":""}" data-f="">All floors</button>`+fls.map(f=>`<button class="bt ${F.floor===f?"on":""}" data-f="${f}">${FL[f]}</button>`).join("");
+ $("grid").innerHTML=fls.filter(f=>F.floor==null||f==F.floor).map(f=>{const L=A.filter(x=>x.r.fl==f);return`<div class="fh"><span>${FL[f]} floor</span><span class="note">${L.filter(x=>x.w.free).length} of ${L.length} free</span></div><div class="grid">${L.map(x=>room(x,cl(x)+((F.ac&&!x.r.ac)||x.r.cap<F.cap?" dim":""),0,D)).join("")}</div>`}).join("");
+ $("ft").innerHTML=`Based on the ${Object.keys(SEC).length} loaded timetables (${A.length} rooms). "Free" means unscheduled in the timetable, not guaranteed empty. AC, seats and floor (from the room number) are sample metadata – edit <code>R</code> in the code.${conf?" "+conf+" overlapping bookings found in the timetables (e.g. "+cex+").":""}`}
+function setNow(){const n=new Date();live=1;$("dv").value=iso(n);TM=Math.round((n.getHours()*60+n.getMinutes())/5)*5;sched()}
+const man=()=>{live=0};
+$("go").onclick=()=>ask($("q").value);$("q").onkeydown=e=>{if(e.key=="Enter")ask($("q").value)};
+document.querySelectorAll(".ex button").forEach(b=>b.onclick=()=>{$("q").value=b.dataset.q;ask(b.dataset.q)});
+$("dv").oninput=()=>{man();sched()};$("tm").oninput=e=>{man();TM=+e.target.value;sched()};$("nw").onclick=setNow;
+$("dm").onclick=()=>{man();$("dv").value="2026-09-28";TM=850;sched()};
+$("du").oninput=e=>{F.dur=Math.max(15,+e.target.value||60);sched()};$("sp-cp").oninput=e=>{F.cap=Math.max(0,+e.target.value||0);sched()};
+$("ac").onclick=()=>{F.ac=F.ac?0:1;sched()};$("qt").onclick=()=>{F.quiet=F.quiet?0:1;sched()};
+$("rs").onclick=()=>{F={floor:null,dur:60,ac:0,cap:0,quiet:0};$("q").value="";$("und").innerHTML="";setNow()};
+$("th").onclick=()=>{const de=document.documentElement,dk=de.dataset.theme?de.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;de.dataset.theme=dk?"light":"dark"};
+$("sp").addEventListener("click",e=>{const T=e.target;
+ const bar=T.closest(".bar");if(bar){const r=bar.getBoundingClientRect();TM=Math.max(OPEN,Math.min(1005,Math.round((OPEN+(e.clientX-r.left)/r.width*(CLOSE-OPEN))/5)*5));man();return sched()}
+ const p=T.closest("[data-pin]");if(p){const id=p.dataset.pin;FAV.has(id)?FAV.delete(id):FAV.add(id);saveFav();return sched()}
+ const f=T.closest("[data-f]");if(f){F.floor=f.dataset.f===""?null:+f.dataset.f;sched()}});
+setInterval(()=>{if(live)setNow()},30000);
+window.spSched=sched;setNow();
+})();
+</script>
+<script>
+const TT=["9:00 AM","9:50 AM","10:50 AM","11:40 AM","12:30 PM","1:20 PM","2:10 PM","3:10 PM","4:00 PM"];
+for(const k in SEC)SEC[k].w=SEC[k].t.map(r=>r.split(" "));
+const IC=[[/lab/i,"🔬"],[/math|transform|prob|statis/i,"➗"],[/circuit|electr|wireless|signal|device|vlsi|chip|memory|semicon|em theory|micro|digital|logic/i,"⚡"],[/learn|comput|script|database|architect|network/i,"💻"],[/psych|ethic|human|social|community|art|verbal|analytic/i,"🧠"],[/medic|bio|imaging/i,"🩺"]];
+const ico=n=>(IC.find(x=>x[0].test(n))||[0,"📘"])[1];
+const $=i=>document.getElementById(i),pad=n=>String(n).padStart(2,"0");
+const iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const dt=s=>new Date(s+"T00:00"),add=(s,n)=>{const d=dt(s);d.setDate(d.getDate()+n);return iso(d)};
+const show=s=>dt(s).toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"});
+const cnt=l=>{const c={};l.forEach(x=>c[x.s]=(c[x.s]||0)+1);return c};
+let D={},all=[],I={},S={},sel=null,TG=.75,SR=false,PL="";
+try{const p=JSON.parse(localStorage.getItem("trackin2")||"{}");D=p.D||{};TG=p.tg||.75;globalThis._s=p.sec}catch(e){}
+$("from").value=iso(new Date())<"2026-09-28"?"2026-09-28":iso(new Date());
+Object.keys(SEC).forEach(k=>$("sec").add(new Option(k)));
+if(globalThis._s&&SEC[globalThis._s])$("sec").value=globalThis._s;
+document.querySelectorAll("#tg button").forEach(b=>b.classList.toggle("on",+b.dataset.g==TG*100));
+function save(){try{localStorage.setItem("trackin2",JSON.stringify({sec:$("sec").value,tg:TG,D}))}catch(e){}}
+function sess(a,b){const r=[];if(!a||!b||b<a)return r;const H=new Set($("hol").value.split(",").map(x=>x.trim()).filter(Boolean)),W=SEC[$("sec").value].w;
+let d=dt(a),n=0;while(iso(d)<=b&&n++<400){const w=d.getDay(),k=iso(d);if(w>0&&w<6&&!H.has(k))W[w-1].forEach((x,p)=>{if(x!="-")r.push({d:k,p,s:x})});d.setDate(d.getDate()+1)}return r}
+function demo(k,c){let h=7;for(const ch of k+c)h=(h*31+ch.charCodeAt(0))>>>0;const n=32+h%13;return{a:Math.round(n*(.58+((h>>>5)%38)/100)),c:n}}
+function info(c,cn){const d=D[$("sec").value][c],R=cn[c]||0,cc=Math.max(0,d.c),a=Math.min(Math.max(0,d.a),cc),T=cc+R,need=p=>Math.max(0,Math.ceil(p*T-1e-9)-a);
+return{a,c:cc,R,T,pct:cc?100*a/cc:0,n75:need(.75),n90:need(.9),safe:R-need(TG),max:T?100*(a+R)/T:0,over:d.a>cc}}
+const lv=s=>s.safe<0?["k","Irreversible"]:s.safe==0?["r","No spare"]:s.safe<=2?["o","Tight"]:["g","Safe"];
+function build(){const k=$("sec").value;S=SEC[k].s;D[k]=D[k]||{};let h="";
+for(const c in S){D[k][c]=D[k][c]||demo(k,c);const v=D[k][c];
+h+=`<div class="sc" id="k_${c}"><div id="r_${c}"></div><div class="wi">🎚️ If I miss <b id="wn_${c}">0</b> more classes → <b id="wr_${c}"></b><input type="range" min="0" max="0" value="0" id="w_${c}" aria-label="What if" oninput="wi('${c}')"></div>
+<div class="inp"><label>Attended<div class="st"><button onclick="adj('${c}','a',-1)" aria-label="less">−</button><input type="number" min="0" id="a_${c}" value="${v.a}" oninput="ed('${c}')"><button onclick="adj('${c}','a',1)" aria-label="more">+</button></div></label>
+<label>Conducted<div class="st"><button onclick="adj('${c}','c',-1)" aria-label="less">−</button><input type="number" min="0" id="c_${c}" value="${v.c}" oninput="ed('${c}')"><button onclick="adj('${c}','c',1)" aria-label="more">+</button></div></label></div></div>`}
+$("cards").innerHTML=h;sel=null;calc()}
+function ed(c){D[$("sec").value][c]={a:+$("a_"+c).value||0,c:+$("c_"+c).value||0};calc()}
+function adj(c,f,n){const e=$(f+"_"+c);e.value=Math.max(0,(+e.value||0)+n);ed(c)}
+function fill(z){const k=$("sec").value;for(const c in S){D[k][c]=z?demo(k,c):{a:0,c:0};$("a_"+c).value=D[k][c].a;$("c_"+c).value=D[k][c].c}calc()}
+function wi(c){const s=I[c],e=$("w_"+c);e.max=s.R;const m=Math.min(+e.value,s.R),f=s.T?100*(s.a+s.R-m)/s.T:0;$("wn_"+c).textContent=m;$("wr_"+c).textContent=f.toFixed(1)+"% "+(f>=TG*100-1e-9?"✔":"⚠")}
+function calc(){const f=$("from").value,e=$("end").value,pl=$("plan").value,tp=Math.round(TG*100);all=sess(f,e);const cn=cnt(all),pc=cnt(sess(f,pl<e?pl:e));I={};
+let A=0,C=0,bn=null,al="";
+for(const c in S){const s=I[c]=info(c,cn);A+=s.a;C+=s.c;if(s.safe>=0&&(!bn||s.safe<bn.s))bn={c,s:s.safe}}
+for(const c in S){const s=I[c],[q,t]=lv(s),p=pc[c]||0,pr=100*(s.a+p)/((s.c+p)||1),ls=all.filter(x=>x.s==c),pn=s.safe>=0&&s.safe<s.R?show(ls[s.safe].d):null,nt=TG==.75?s.n75:TG==.9?s.n90:Math.max(0,Math.ceil(.8*s.T-1e-9)-s.a);
+if(s.safe<0)al+=`<div class="ban k">⚠ Mathematical Recovery Alert – ${S[c]}: even if you attend all ${s.R} remaining classes, your maximum is ${s.max.toFixed(1)}%. ${tp}% is unreachable on this timetable. Verify records and meet your faculty/mentor.</div>`;
+const K=$("k_"+c);K.className="sc "+q;K.style.order=SR?Math.round(s.safe):0;
+$("r_"+c).innerHTML=`<div class="hd"><div class="ic">${ico(S[c])}</div><div class="nm">${S[c]}</div><span class="badge">${t}</span></div>
+<div class="nums"><div class="pct">${s.pct.toFixed(1)}<small>%</small></div><span><b>${Math.max(0,s.safe)}</b>safe absences</span><span><b>${s.R}</b>classes left</span></div>
+<div class="bar"><i class="mx" style="width:${s.max}%"></i><i class="nw" style="width:${s.pct}%"></i><u style="left:${tp}%"><em>${tp}</em></u></div>
+<div class="f">To finish at ${tp}%: attend <b>${nt>s.R?"impossible":nt+" of "+s.R}</b></div>
+<div class="f">Best possible final: <b>${s.max.toFixed(1)}%</b> · On ${show(pl)} (attending all): <b>${pr.toFixed(1)}%</b></div>
+<div class="f">📍 Point of no return: <b>${pn||(s.safe<0?"already passed":"none this semester")}</b> <span class="note">(if you skipped every class from now)</span></div>${s.over?'<div class="f" style="color:var(--rc);font-weight:700">Attended cannot exceed conducted – counted as equal.</div>':""}`;wi(c)}
+$("alerts").innerHTML=al;const ov=C?100*A/C:0;$("s1").textContent=C?ov.toFixed(1)+"%":"–";
+$("rg").style.strokeDasharray=(ov*3.1416).toFixed(1)+" 315";
+$("s0").textContent=!C?"enter numbers":ov>=90?"🚀 flying":ov>=tp?"😎 on track":ov>=tp-5?"😬 careful":"🚨 danger zone";
+$("s3").textContent=bn?`${S[bn.c]} (${bn.s} spare)`:"None safe";days();leave();save()}
+function cls(c,k){const s=I[c];if(s.safe<0)return["k","Irreversible","Attend every class"];const r=s.safe-k;
+return r<0?["r","Must attend","Skipping breaks your target for this subject"]:r==0?["o","Attend","Skipping uses your last spare absence"]:["g","Flexible",`${r} spare absence${r>1?"s":""} would remain`]}
+function days(){const by={},ks=[];sess(add($("from").value,1),$("end").value).forEach(x=>{if(!by[x.d]){by[x.d]=[];ks.push(x.d)}by[x.d].push(x)});const ds=ks.slice(0,14);
+if(!ds.length){$("strip").innerHTML="";$("det").innerHTML="No class days left in this range.";$("s2").textContent="No classes";PL="";return}
+if(!sel||!ds.includes(sel))sel=ds[0];
+$("strip").innerHTML=ds.map(d=>{const k=cnt(by[d]);let x=99,z=0;for(const c in k){x=Math.min(x,I[c].safe-k[c]);if(I[c].safe<0)z=1}
+const q=z||x<0?"r":x==0?"o":x==1?"y":"g",t=z||x<0?"Must attend":x==0?"Attend":x==1?"Careful":"Flexible";
+return`<button class="chip ${q} ${d==sel?"sel":""}" onclick="sel='${d}';days()"><b>${show(d)}</b><span>${t}</span></button>`}).join("");
+const k0=cnt(by[ds[0]]),mu=Object.keys(k0).filter(c=>I[c].safe-k0[c]<0).length;$("s2").textContent=`${show(ds[0])} · ${mu?mu+" must-attend":"nothing critical"}`;
+const k=cnt(by[sel]);PL=`TrackIn plan – ${show(sel)} (${$("sec").value})\n`;
+$("det").innerHTML=`<p class="note" style="margin:0">${show(sel)} – advice assumes you skip only this day's classes.</p>`+by[sel].map(x=>{const[q,t,r]=cls(x.s,k[x.s]);PL+=`${TT[x.p]} ${S[x.s]} (${roomOf($("sec").value,x.s)}): ${t.toUpperCase()}\n`;return`<div class="row ${q}"><div class="t">${TT[x.p]}</div><div class="n">${ico(S[x.s])} ${S[x.s]}<small>📍 ${roomOf($("sec").value,x.s)} · ${r}</small></div><span class="badge">${t}</span></div>`}).join("")}
+function cpy(){const b=$("ti-cp");const done=()=>{b.textContent="✅ Copied!";setTimeout(()=>b.textContent="📋 Copy this plan (for WhatsApp)",1800)};
+try{navigator.clipboard.writeText(PL).then(done,()=>b.textContent="Select & copy manually")}catch(e){b.textContent="Select & copy manually"}}
+function ok(a,b){const l=cnt(all.filter(x=>x.d>=a&&x.d<=b));for(const c in l){const s=I[c];if(s.a+s.R-l[c]<TG*s.T-1e-9)return 0}return 1}
+function leave(){const f=$("from").value,e=$("end").value,a=$("lf").value,b=$("lt").value,tp=Math.round(TG*100);
+if(!a||!b||b<a){$("lv").innerHTML='<div class="ban o">Choose a leave start date on or before the end date.</div>';return}
+const l=cnt(all.filter(x=>x.d>=a&&x.d<=b)),n=Object.values(l).reduce((x,y)=>x+y,0);
+if(!n){$("lv").innerHTML='<div class="ban g">✔ No classes fall in this range (weekend, holiday, or outside the semester).</div>';return}
+let good=1,h="";for(const c in l){const s=I[c],fin=100*(s.a+s.R-l[c])/s.T,bad=fin<tp-1e-9;if(bad)good=0;
+h+=`<div class="row ${bad?"r":"g"}"><div class="n">${S[c]}<small>Missing ${l[c]} · ${Math.max(0,s.safe)} safe absences · final ${fin.toFixed(1)}%</small></div><span class="badge">${bad?(l[c]-Math.max(0,s.safe))+" too many":"Safe"}</span></div>`}
+let sug="";if(!good){const len=Math.round((dt(b)-dt(a))/864e5)+1;for(let d=f;d&&add(d,len-1)<=e;d=add(d,1)){if(ok(d,add(d,len-1))){sug=`Earliest safe window of the same length: <b>${show(d)} – ${show(add(d,len-1))}</b>.`;break}}
+sug=sug||"No fully safe window of this length exists this semester – try a shorter leave."}
+$("lv").innerHTML=`<div class="ban ${good?"g":"o"}">${good?"✔ LEAVE-SAFE – every subject stays at "+tp+"% or above if you attend everything else.":"⚠ CONDITIONAL – this leave drops a subject below "+tp+"%. "+sug}<br><span style="font-weight:600">${n} classes affected.</span></div>`+h}
+$("ti-tabs").onclick=e=>{const t=e.target.dataset.t;if(!t)return;document.querySelectorAll("#ti-tabs button").forEach(b=>b.classList.toggle("on",b==e.target));["a","b","c"].forEach(x=>$("p"+x).classList.toggle("on",x==t))};
+$("tg").onclick=e=>{const g=e.target.dataset.g;if(!g)return;TG=g/100;document.querySelectorAll("#tg button").forEach(b=>b.classList.toggle("on",b==e.target));calc()};
+$("sec").onchange=build;["from","end","plan","hol","lf","lt"].forEach(i=>$(i).oninput=calc);build();
+</script>
+<script>
+(function(){const nv=document.getElementById("nav");
+function go(a,u){["sp","ti"].forEach(x=>{document.getElementById(x).hidden=x!=a});nv.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.a==a));
+ if(a=="sp"&&window.spSched)window.spSched();if(u!==0){try{history.replaceState(null,"","#"+a)}catch(e){}}window.scrollTo(0,0)}
+nv.onclick=e=>{const a=e.target.dataset.a;if(a)go(a)};go(location.hash=="#ti"?"ti":"sp",0)})();
+</script></body></html>
